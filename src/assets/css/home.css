@@ -1,0 +1,35 @@
+/* 全部商品分类展开列表 */
+.leftNav ul li {
+    height: 60px;
+    line-height: 40px;
+    background: url(../../../public/img/homeimg/n_arrow.gif) no-repeat 190px center;
+    color: #FFF;
+    font-size: 14px;
+    margin-left: 1px;
+    cursor: pointer;
+    position: relative;
+    /*鼠标移入过渡动画*/
+    transition: all 0.5s;
+}
+
+/*鼠标移入商品列表，右移*/
+.leftNav ul li:hover {
+    transform: translate(20px, 0);
+}
+
+.leftNav ul li .fj {
+    padding: 10px;
+}
+
+.leftNav ul li .n_img {
+    width: 20px;
+    height: 21px;
+    text-align: center;
+    float: left;
+    margin: 0 10px;
+}
+
+
+.leftNav ul li .n_img img {
+    vertical-align: middle;
+}

@@ -1,0 +1,80 @@
+/* 首页tab页悬停 */
+.maincenter .el-tabs__item:hover {
+    color: black;
+}
+
+/* 首页tab页被点击 */
+.maincenter .el-tabs__item.is-active {
+    color: #ff3c1b;
+}
+
+/* 首页tab页被点击 */
+.maincenter .el-tabs__active-bar {
+    background-color: #ff3c1b;
+}
+
+/* 亲子页年龄段 */
+.selecd .el-tabs__item {
+    background: rgb(245, 245, 245);
+    padding: 0;
+}
+
+/* 亲子页年龄段 */
+.selecd .el-tabs__header {
+    background: rgb(245, 245, 245);
+    border: none;
+}
+
+/* 登录页右侧tabs */
+.loginRight .el-tabs--border-card>.el-tabs__content {
+    height: 261px;
+}
+
+/* 登录页右侧tabs未选中颜色 */
+.loginRight .el-tabs--border-card>.el-tabs__header .el-tabs__item {
+    background-color: #F5F5F5;
+}
+
+/* 登录页右侧tabs选中颜色 */
+.loginRight .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
+    background-color: white;
+    color: #FF816B;
+}
+
+.loginRight .el-tabs__item:hover {
+    color: #FF816B !important;
+}
+.el-form-item__content{
+    margin: 0 !important;
+    margin-top: 5px !important;
+
+}
+
+/* 王军军 */
+.selecd .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
+    background: rgb(245, 245, 245);
+    border: none !important;
+}
+
+.selecd .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
+    margin-top: 2px;
+}
+
+.selecd .el-tabs--border-card>.el-tabs__header .el-tabs__item {
+    border: none !important;
+    outline: none !important;
+}
+
+.selecd .el-tabs__header {
+    height: 40px;
+}
+
+.selecd .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
+    margin-top: 0px !important;
+}
+
+/* 防止自适应的固定宽度 */
+.layoutWidth {
+    width: 1407px;
+    margin: 0 auto;
+}

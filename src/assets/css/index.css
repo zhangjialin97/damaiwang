@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: normal 'weiruanyahei';
+}
+
+ul li,
+ol li {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.el-row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
