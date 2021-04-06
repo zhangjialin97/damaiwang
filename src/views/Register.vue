@@ -174,12 +174,16 @@ export default {
                 return;
               }
             }
-
-            this.$http.post("http://localhost:8081/api/register",this.ruleForm.userphone).then((res) => {
-              console.log(res.data);
-console.log("123");
-              this.$message("注册成功");
-            });
+            this.$http
+              .post(
+                "http://localhost:8081/api/register",
+                this.ruleForm.userphone
+              )
+              .then((res) => {
+                console.log(res.data);
+                console.log("123");
+                this.$message("注册成功");
+              });
           });
         } else {
           console.log("error submit!!");
