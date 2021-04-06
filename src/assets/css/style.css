@@ -1,3 +1,8 @@
+/* 防止自适应的固定宽度 */
+.layoutWidth {
+    width: 1407px;
+    margin: 0 auto;
+}
 /* 首页tab页悬停 */
 .maincenter .el-tabs__item:hover {
     color: black;
@@ -49,8 +54,19 @@
     margin-top: 5px !important;
 
 }
-
+/* ----------------------------------------------------*/
 /* 王军军 */
+
+.selecd .el-tabs__item {
+    background: rgb(245, 245, 245);
+    padding: 0 !important;
+}
+
+.selecd .el-tabs__header {
+    background: rgb(245, 245, 245);
+    border: none !important;
+}
+
 .selecd .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
     background: rgb(245, 245, 245);
     border: none !important;
@@ -73,8 +89,127 @@
     margin-top: 0px !important;
 }
 
-/* 防止自适应的固定宽度 */
-.layoutWidth {
-    width: 1407px;
-    margin: 0 auto;
+
+/* 订单确认页 */
+
+.aff .el-tabs--top .el-tabs__item.is-top:last-child {
+    text-indent: 1em;
 }
+
+.aff .el-tabs__active-bar {
+    width: 135px !important;
+    background: rgb(255, 60, 27) !important;
+}
+
+.aff .el-tabs__item.is-active {
+    font-size: 18px;
+    color: rgb(255, 60, 27);
+}
+
+.aff .autonym .el-tab-pane {
+    font-size: 14px;
+}
+
+.aff .payment .el-radio__input.is-checked .el-radio__inner {
+    border-color: red;
+}
+
+.aff .payment .el-radio__inner::after {
+    width: 7px;
+    height: 7px;
+    background: red;
+}
+
+.aff .payment .el-radio__input.is-checked .el-radio__inner {
+    background: #fff;
+}
+
+.aff .payment .el-radio__input.is-checked+.el-radio__label {
+    color: #000;
+}
+
+.aff .invoice .invoiceTab .el-tabs__active-bar {
+    width: 70px !important;
+}
+
+.aff .invoice .invoiceTab .el-tabs--top .el-tabs__item.is-top:nth-child(2) {
+    text-indent: 1em;
+}
+
+.aff .invoice .el-input {
+    width: 15% !important;
+}
+
+.aff .el-checkbox__input.is-checked .el-checkbox__inner {
+    background-color: #fff !important;
+    border-color: #888 !important;
+}
+
+.aff .el-checkbox__inner::after {
+    box-sizing: content-box;
+    content: "";
+    border: 1px solid #000;
+    border-left: 0;
+    border-top: 0;
+    height: 7px;
+    left: 4px;
+    position: absolute;
+    top: 1px;
+    transform: rotate(45deg) scaleY(0);
+    width: 3px;
+    transition: transform .15s ease-in .05s;
+    transform-origin: center;
+}
+
+.aff .el-checkbox__input.is-checked .el-checkbox__inner::after {
+    transform: rotate(45deg) scaleY(1);
+}
+
+.aff .el-checkbox__input.is-checked+.el-checkbox__label {
+    color: #000;
+}
+
+.aff .autonym .el-button {
+    width: 120px;
+    background: red !important;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+
+.aff .autonym .autonymcertificate .el-table th>.cell .el-checkbox {
+    display: none !important;
+}
+
+
+/* .aff .topay p .el-button--danger.is-disabled {
+    margin-bottom: 30px;
+} */
+
+.aff .autonym .autonymcertificate .messageBox .dialog .el-dialog {
+    width: 700px;
+    padding-right: 35px;
+}
+
+.Payaff .info .el-table--border {
+    height: 100% !important;
+}
+
+.gopay p .el-checkbox {
+    width: 140px;
+    height: 50px;
+    background: url('/img/base/icons-wx.png') no-repeat right center;
+}
+
+.gopay p .el-checkbox+.el-checkbox {
+    background: url('/img/base/icons-zfb.png') no-repeat right center;
+}
+
+.gopay p .el-checkbox .el-checkbox__inner {
+    top: 14px;
+}
+
+.gopay p .el-button--danger {
+    background: red;
+}
+/* ------------------------------------------------------*/

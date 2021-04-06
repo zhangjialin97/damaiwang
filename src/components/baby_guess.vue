@@ -140,18 +140,22 @@
           </ul>
         </div>
     </div>
+    <div>
+          <CalendarSwitchVue />
+    </div>
   </div>
 </template>
 <script>
 import guessJsonVue from "./guess_json.vue";
 import babyDelicacy from "./babyDelicacy.vue";
-import '../assets/css/style.css'
 import babyAgeVue from './babyAge.vue';
+import CalendarSwitchVue from './Calendar/CalendarSwitch'
 export default {
   components: {
     guessJsonVue,
     babyDelicacy,
-    babyAgeVue
+    babyAgeVue,
+    CalendarSwitchVue
   },
   data() {
     return {
@@ -268,6 +272,11 @@ h4 {
 .rankinglike .rankingImg img {
   width: 140px;
   height: 165px;
+}
+.ranking::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 .rankinglike .ranTop {
   margin-top: 25px;

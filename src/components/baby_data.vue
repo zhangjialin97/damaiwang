@@ -3,7 +3,7 @@
     <el-row :gutter="20">
       <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
       <el-col :span="18">
-        <div class="grid-content bg-purple bg">
+        <div class="grid-content bg-purple layoutwidth">
           <!-- 轮播组件 -->
           <banner :banners="imgarr"></banner>
           <!-- <slot name="banner"></slot> -->
@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      imgarr: ["/img/qinzi/img_03.png"],
+      imgarr: ["/img/qinzi/img_03.png",'/img/base/pic1.jpg','/img/base/pic2.jpg','/img/base/pic3.jpg'],
     };
   },
 };
