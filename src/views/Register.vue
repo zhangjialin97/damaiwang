@@ -175,7 +175,7 @@ export default {
               }
             }
 
-            this.$http.get("http://localhost:8081/api/register").then((res) => {
+            this.$http.post("http://localhost:8081/api/register",this.ruleForm.userphone).then((res) => {
               console.log(res.data);
 
               this.$message("注册成功");
