@@ -177,7 +177,7 @@ export default {
 
             this.$http.get("http://localhost:8081/api/register").then((res) => {
               console.log(res.data);
-
+console.log("123");
               this.$message("注册成功");
             });
           });
