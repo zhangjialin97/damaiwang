@@ -1,6 +1,13 @@
 <template>
   <div class="2">
-    <Seatend></Seatend>
+    <el-row :gutter="20">
+      <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="18"
+        ><div class="grid-content bg-purple layoutWidth">
+          <Seatend></Seatend></div
+      ></el-col>
+      <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
+    </el-row>
   </div>
 </template>
 <script>
@@ -11,3 +18,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.grid-content {
+  min-height: 36px;
+}
+</style>

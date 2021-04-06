@@ -48,6 +48,7 @@
                   type="primary"
                   class="regisbtn"
                   @click="submitForm('ruleForm')"
+                  v-loading="loading"
                   >登录</el-button
                 >
               </el-form-item>
@@ -71,7 +72,6 @@
                 :model="ruleForm"
                 status-icon
                 :rules="rules"
-                ref="ruleForm"
                 label-width="100px"
                 class="demo-ruleForm widform2"
               >
@@ -108,6 +108,7 @@
                     type="primary"
                     class="regisbtn"
                     @click="submitForm('ruleForm')"
+                    v-loading="loading"
                     >登录</el-button
                   >
                 </el-form-item>
@@ -177,7 +178,6 @@ export default {
       ruleForm: {
         userphone: "",
         pass: "",
-        checkPass: "",
         sendcode: "",
       },
       disabled: false,
@@ -187,6 +187,7 @@ export default {
         pass: [{ validator: validatePass, trigger: "blur" }],
         userphone: [{ validator: validatephone, trigger: "blur" }],
       },
+      loading: false,
     };
   },
   methods: {
@@ -196,7 +197,34 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert("submit!");
+          this.loading = true;
+          this.$http.get("http://localhost:8081/api/login").then((res) => {
+            console.log(res.data);
+
+            for (var i = 0; i < res.data.length; i++) {
+              if (this.ruleForm.userphone == res.data[i].userid) {
+                if (this.ruleForm.pass == res.data[i].password) {
+                  this.$message("登陆成功");
+                  setTimeout(() => {
+                    // 加载延迟
+                    this.loading = false;
+
+                    // 跳转页面
+                    this.$router.push({ path: "/home" });
+
+                    // 页面缓存
+                    // sessionStorage.setItem("user", this.numberValidateForm);
+                  }, 3000);
+                  return;
+                } else {
+                  this.loading = false;
+                  this.$message("密码不正确");
+                  return;
+                }
+              }
+            }
+            this.$message("此账号未注册，请注册后使用");
+          });
         } else {
           console.log("error submit!!");
           return false;

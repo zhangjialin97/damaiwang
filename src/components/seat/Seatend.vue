@@ -7,7 +7,7 @@
       <div class="head-third">3 结账付钱</div>
     </div>
     <!-- 中间选座区域 -->
-    <div id="seatMap" :class="'choose-seat-body ' + chartsSeatArea.join(' ')">
+    <div id="seatMap" :class="'choose-seat-body' + chartsSeatArea.join(' ')">
       <div
         class="seat-charts-row"
         v-for="(item, x) in seatOrder"
@@ -101,7 +101,11 @@
       <div class="seat-area-legend">
                 <CheckboxGroup v-model="chartsSeatArea">
                     
-          <div class="seat-area-row" v-for="item in seatPriceList">
+          <div
+            class="seat-area-row"
+            v-for="(item, ind) in seatPriceList"
+            :key="ind"
+          >
                         
             <h2 :class="'cell-' + item.areaLevelName">￥{{ item.price }}</h2>
                         <strong>{{ item.areaLevelName }} 级</strong>

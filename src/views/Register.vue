@@ -71,6 +71,7 @@
             type="primary"
             class="regisbtn"
             @click="submitForm('ruleForm')"
+            v-loading="loading"
             >立即注册</el-button
           >
         </el-form-item>
@@ -152,6 +153,7 @@ export default {
         checkPass: [{ validator: validatePass2, trigger: "blur" }],
         userphone: [{ validator: validatephone, trigger: "blur" }],
       },
+      loading: false,
     };
   },
 
@@ -163,7 +165,22 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert("submit!");
+          this.loading = true;
+          this.$http.get("http://localhost:8081/api/login").then((res) => {
+            console.log(res.data);
+            for (var i = 0; i < res.data.length; i++) {
+              if (this.ruleForm.userphone == res.data[i].userid) {
+                this.$message("此账号已注册，请输入其他账号");
+                return;
+              }
+            }
+
+            // this.$http.get("http://localhost:8081/api/register").then((res) => {
+            //   console.log(res.data);
+
+            //   this.$message("注册成功");
+            // });
+          });
         } else {
           console.log("error submit!!");
           return false;

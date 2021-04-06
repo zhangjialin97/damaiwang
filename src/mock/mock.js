@@ -15,10 +15,10 @@ function startbanner() {
 }
 
 // 登录
-Mock.mock('/api/login', 'post', (option) => {
-    let { userName, passWord } = JSON.parse(option.body);
-    return (userName == "admin", passWord == "123")
-})
+// Mock.mock('/api/login', 'post', (option) => {
+//     let { userName, passWord } = JSON.parse(option.body);
+//     return (userName == "admin", passWord == "123")
+// })
 
 // 今日推荐图片
 Mock.mock('/api/home/todayimg', 'get', todayimg);

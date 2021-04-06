@@ -79,11 +79,9 @@ export default {
     });
     this.$http("/api/home/suijiImg").then((res) => {
       this.suijiImg = res.data;
-      console.log(this.suijiImg)
     });
 
     this.ranNum = this.f1();
-    console.log(this.ranNum);
   },
   // 价格过滤器
   filters: {
