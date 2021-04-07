@@ -56,7 +56,10 @@
             <p>
               <input type="checkbox" /> <span>下次自动登录</span>
               <span class="fr"
-                >忘记密码?<a href="" style="color: #ff3c1b">立即注册</a></span
+                >忘记密码?
+                <router-link to="/register" style="color: #ff3c1b"
+                  >立即注册</router-link
+                ></span
               >
             </p>
             <p class="bianju">

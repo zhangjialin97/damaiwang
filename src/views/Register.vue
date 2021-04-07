@@ -180,7 +180,6 @@ export default {
             })
             .then((res) => {
               console.log(res.data);
-              console.log("123");
               this.$message("注册成功");
             });
           });
