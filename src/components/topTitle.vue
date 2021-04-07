@@ -2,12 +2,12 @@
   <!-- 注册页顶部导航 -->
   <div class="topTitle">
     <img src="img/logo.png" alt="" />
-    <span class="txt">{{ txt }}账户注册</span>
+    <span class="txt">{{ title }}</span>
   </div>
 </template>
 <script>
 export default {
-  props: ["txt"],
+  props: ["title"],
 };
 </script>
 <style scoped>

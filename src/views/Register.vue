@@ -2,7 +2,7 @@
   <div class="register">
     <!-- 导入头部组件 -->
     <div>
-      <topTitle />
+      <topTitle title="账户注册" />
     </div>
 
     <!-- 主体部分 -->

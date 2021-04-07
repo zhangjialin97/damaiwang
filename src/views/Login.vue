@@ -2,7 +2,7 @@
   <div class="login">
     <!-- 导入头部组件 -->
     <div>
-      <topTitle />
+      <topTitle title="账户登录"/>
     </div>
     <!-- 主体部分 -->
     <div class="main">
