@@ -2,7 +2,7 @@
   <div class="login">
     <!-- 导入头部组件 -->
     <div>
-      <topTitle title="账户登录"/>
+      <topTitle title="账户登录" />
     </div>
     <!-- 主体部分 -->
     <div class="main">
@@ -215,6 +215,9 @@ export default {
                     // 跳转页面
                     this.$router.push({ path: "/home" });
 
+                    // 向store里传递数据
+                    this.$store.state.user = this.ruleForm.userphone;
+                    this.$store.state.pass = this.ruleForm.pass;
                     // 页面缓存
                     // sessionStorage.setItem("user", this.numberValidateForm);
                   }, 3000);
