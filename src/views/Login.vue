@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="login" v-title data-title="登录页">
     <!-- 导入头部组件 -->
     <div>
       <topTitle title="账户登录" />

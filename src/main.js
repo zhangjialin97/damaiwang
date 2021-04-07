@@ -19,6 +19,12 @@ import mock from './mock/mock.js'
 
 Vue.config.productionTip = false
 
+Vue.directive('title', {
+  inserted: function (el) {
+    document.title = el.dataset.title
+  }
+})
+
 new Vue({
   router,
   store,

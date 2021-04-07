@@ -1,5 +1,5 @@
 <template>
-  <div class="register">
+  <div class="register" v-title data-title="注册页">
     <!-- 导入头部组件 -->
     <div>
       <topTitle title="账户注册" />

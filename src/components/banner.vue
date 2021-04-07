@@ -13,8 +13,8 @@
       </div>
       <div class="swiper-pagination"></div>
       <!-- 如果需要导航按钮 -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <!-- <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div> -->
     </div>
   </div>
 </template>
@@ -43,10 +43,10 @@ export default {
           el: ".swiper-pagination",
         },
         // 导航按钮
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+        // navigation: {
+        //   nextEl: ".swiper-button-next",
+        //   prevEl: ".swiper-button-prev",
+        // },
       },
       banners: [],
     };

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" v-title data-title="首页">
     <el-row :gutter="20">
       <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
       <el-col :span="18">
