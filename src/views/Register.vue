@@ -165,7 +165,6 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.loading = true;
           this.$http.get("http://localhost:8081/api/login").then((res) => {
             console.log(res.data);
             for (var i = 0; i < res.data.length; i++) {
@@ -174,16 +173,16 @@ export default {
                 return;
               }
             }
-            this.$http
-              .post(
-                "http://localhost:8081/api/register",
-                this.ruleForm.userphone
-              )
-              .then((res) => {
-                console.log(res.data);
-                console.log("123");
-                this.$message("注册成功");
-              });
+            this.$http({
+              method: "post",
+              url: "http://localhost:8081/api/register",
+              params: { name: this.ruleForm.userphone,pass:this.ruleForm.pass },
+            })
+            .then((res) => {
+              console.log(res.data);
+              console.log("123");
+              this.$message("注册成功");
+            });
           });
         } else {
           console.log("error submit!!");
