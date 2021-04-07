@@ -73,22 +73,33 @@
           <div class="rili fl">
             <calendar></calendar>
           </div>
+
+          <div class="dibuguss fl">
+            <bottom></bottom>
+          </div>
         </div>
       </el-col>
       <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
     </el-row>
+    <div class="dibu">
+      <setBottom></setBottom>
+    </div>
   </div>
 </template>
 <script>
 import banner from "../components/banner.vue";
 import floorCommon from "../components/floorCommon";
 import calendar from "../components/Calendar/CalendarSwitch";
+import setBottom from "../components/setBottom";
+import bottom from "../components/bottom";
 
 export default {
   components: {
     banner,
     floorCommon,
     calendar,
+    bottom,
+    setBottom,
   },
   data() {
     return {
@@ -161,7 +172,13 @@ export default {
 .todayli {
   margin-right: 75px;
 }
-.rili{
-margin-top: 30px;
+.rili {
+  margin-top: 30px;
+}
+.dibuguss {
+  margin-top: 20px;
+}
+.dibu {
+  margin-top: 20px;
 }
 </style>

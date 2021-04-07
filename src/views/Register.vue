@@ -165,25 +165,38 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$http.get("http://localhost:8081/api/login").then((res) => {
-            console.log(res.data);
+          this.loading = true;
+          this.$http({
+            method: "get",
+            url: "http://localhost:8081/api/login",
+          }).then((res) => {
             for (var i = 0; i < res.data.length; i++) {
               if (this.ruleForm.userphone == res.data[i].userid) {
                 this.$message("此账号已注册，请输入其他账号");
+                this.loading = false;
                 return;
               }
             }
-            this.$http({
-              method: "post",
-              url: "http://localhost:8081/api/register",
-              params: { name: this.ruleForm.userphone,pass:this.ruleForm.pass },
-            })
-            .then((res) => {
-              console.log(res.data);
-              this.$message("注册成功");
-            });
+          });
+          this.$http({
+            method: "get",
+            url: "http://localhost:8081/api/register",
+            params: {
+              name: this.ruleForm.userphone,
+              pass: this.ruleForm.pass,
+            },
+          }).then((res) => {
+            this.$message("注册成功,马上跳转登录");
+            setTimeout(() => {
+              // 加载延迟
+              this.loading = false;
+
+              // 跳转页面
+              this.$router.push({ path: "/login" });
+            }, 3000);
           });
         } else {
+          this.loading = false;
           console.log("error submit!!");
           return false;
         }
