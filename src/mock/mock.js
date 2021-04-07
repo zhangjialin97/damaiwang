@@ -147,14 +147,19 @@ function bigImg() {
     return data;
 }
 
-// 王军军
+//王军军
 //价格随机生成
 Mock.Random.extend({
     phone: function () {
         var phonePrefixs = ['1', '2', '3'] // 自己写前缀哈
         return this.pick(phonePrefixs) + Mock.mock(/\d{2}/) //Number()
+    },
+    dingdan: function () {
+        var phonePrefixs = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'] // 自己写前缀哈
+        return this.pick(phonePrefixs) + Mock.mock(/\d{8,10}\w{10,12}|\w{5,10}\d{10,15}/) //Number()
     }
 })
+
 //精彩请求返回
 function babyJing() {
     let data = [];
@@ -280,6 +285,7 @@ Mock.mock('/api/babyCai/ageimg', 'get', babyageImg);
 Mock.mock('/api/babyCai/ageJsonzero', 'get', babyAgeZero);
 Mock.mock('/api/babyCai/rankinginfo', 'get', babyranking);
 Mock.mock('/api/babyCai/rankingImg', 'get', babyrankingImg);
+Mock.mock('/api/pay/dingdan', 'get', Mock.Random.dingdan());
 // Mock.mock('/api/login', 'post', (option) => {
 //     let { userName, passWord } = JSON.parse(option.body);
 //     return (userName == "admin", passWord == "123")
