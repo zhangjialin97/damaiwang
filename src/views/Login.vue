@@ -54,7 +54,8 @@
               </el-form-item>
             </el-form>
             <p>
-              <input type="checkbox" /> <span>下次自动登录</span>
+              <input type="checkbox" v-model="checkbox" />
+              <span>下次自动登录</span>
               <span class="fr"
                 >忘记密码?
                 <router-link to="/register" style="color: #ff3c1b"
@@ -151,6 +152,13 @@ export default {
   // 设置全局背景颜色
   mounted() {
     document.body.style.backgroundColor = "#F5F5F5";
+    //如果下次登录选中时获取缓冲中的账号密码数据
+    if (JSON.parse(sessionStorage.getItem("user")) != null) {
+      this.ruleForm.userphone = JSON.parse(
+        sessionStorage.getItem("user")
+      )[0].key;
+      this.ruleForm.pass = JSON.parse(sessionStorage.getItem("user"))[0].pass;
+    }
   },
 
   data() {
@@ -178,6 +186,7 @@ export default {
     };
     return {
       activeName: "first",
+      checkbox: false,
       ruleForm: {
         userphone: "",
         pass: "",
@@ -202,8 +211,6 @@ export default {
         if (valid) {
           this.loading = true;
           this.$http.get("http://localhost:8081/api/login").then((res) => {
-            console.log(res.data);
-
             for (var i = 0; i < res.data.length; i++) {
               if (this.ruleForm.userphone == res.data[i].userid) {
                 if (this.ruleForm.pass == res.data[i].password) {
@@ -215,11 +222,15 @@ export default {
                     // 跳转页面
                     this.$router.push({ path: "/home" });
 
-                    // 向store里传递数据
-                    this.$store.state.user = this.ruleForm.userphone;
-                    this.$store.state.pass = this.ruleForm.pass;
                     // 页面缓存
-                    // sessionStorage.setItem("user", this.numberValidateForm);
+                    var sessoinArr = [
+                      {
+                        key: this.ruleForm.userphone,
+                        pass: this.ruleForm.pass,
+                        checkbox: this.checkbox,
+                      },
+                    ];
+                    sessionStorage.setItem("user", JSON.stringify(sessoinArr));
                   }, 3000);
                   return;
                 } else {
@@ -229,7 +240,9 @@ export default {
                 }
               }
             }
+            this.loading = false;
             this.$message("此账号未注册，请注册后使用");
+            this.ruleForm.pass = "";
           });
         } else {
           console.log("error submit!!");

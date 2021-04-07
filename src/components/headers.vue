@@ -4,10 +4,14 @@
       <li>Hi 欢迎来到大麦网</li>
       <li>
         [
-        <span class="login"
+        <span class="login" v-if="user == ''"
           ><router-link to="/Login">登录&nbsp;</router-link></span
         >
-        <span><router-link to="/Register">&nbsp;注册</router-link></span> ]
+        <span class="login" v-else>{{ user }}&nbsp;</span>
+        <span v-if="user == ''"
+          ><router-link to="/Register">&nbsp;注册</router-link></span
+        >
+        <span v-else @click="tuichu">&nbsp;退出</span> ]
       </li>
       <li>
         <!-- //show-timeout=number  number下拉菜单的显示时间 -->
@@ -96,6 +100,7 @@ export default {
       cc: true,
       dd: true,
       num: 10,
+      user: "",
     };
   },
   methods: {
@@ -121,6 +126,21 @@ export default {
         this.dd = true;
       }
     },
+    tuichu() {
+      //判断下次自动登录选中时
+      if (JSON.parse(sessionStorage.getItem("user"))[0].checkbox) {
+        this.user = "";
+      } else {
+        sessionStorage.clear();
+        this.user = "";
+      }
+    },
+  },
+  mounted() {
+    //判断登录状态
+    if (JSON.parse(sessionStorage.getItem("user")) != null) {
+      this.user = JSON.parse(sessionStorage.getItem("user"))[0].key;
+    }
   },
 };
 </script>
@@ -143,6 +163,9 @@ a {
   float: left;
   font-size: 12px;
   line-height: 36px;
+}
+.head_left > li .login {
+  color: rgb(254, 127, 127);
 }
 .head_left > li .login > a {
   color: rgb(254, 127, 127);

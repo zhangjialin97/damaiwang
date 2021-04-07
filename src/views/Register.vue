@@ -174,6 +174,9 @@ export default {
               if (this.ruleForm.userphone == res.data[i].userid) {
                 this.$message("此账号已注册，请输入其他账号");
                 this.loading = false;
+                (this.ruleForm.pass = ""),
+                  (this.ruleForm.checkPass = ""),
+                  (this.ruleForm.sendcode = "");
                 return;
               }
             }
