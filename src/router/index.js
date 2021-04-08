@@ -3,29 +3,30 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [{
+const routes = [
+    {
         path: '/',
         name: 'login',
         component: () =>
-            import ('../views/Login.vue')
+            import('../views/Login.vue')
     },
     {
         path: '/Register',
         name: 'Register',
         component: () =>
-            import ('../views/Register.vue')
+            import('../views/Register.vue')
     },
     {
         path: '/check',
         name: 'check',
         component: () =>
-            import ('../views/check.vue')
+            import('../views/check.vue')
     },
     {
         path: '/order',
         name: 'order',
         component: () =>
-            import ('../views/order.vue'),
+            import('../views/order.vue'),
         beforeEnter: (to, from, next) => {
             // ...
             if (from.path == '/check') {
@@ -39,7 +40,7 @@ const routes = [{
         path: '/pay',
         name: 'pay',
         component: () =>
-            import ('../views/pay.vue'),
+            import('../views/pay.vue'),
         beforeEnter: (to, from, next) => {
             // ...
             if (from.path == '/order') {
@@ -53,7 +54,7 @@ const routes = [{
         path: '/payma',
         name: 'payma',
         component: () =>
-            import ('../views/payma.vue'),
+            import('../views/payma.vue'),
         beforeEnter: (to, from, next) => {
             // ...
             if (from.path == '/pay') {
@@ -67,76 +68,86 @@ const routes = [{
         path: '/Login',
         name: 'login',
         component: () =>
-            import ('../views/Login.vue')
+            import('../views/Login.vue')
     },
     {
         path: '/manage',
         name: 'manage',
         component: () =>
-            import ('../views/manage.vue'),
+            import('../views/manage.vue'),
         children: [{
-                path: '/',
-                name: 'Home',
-                component: () =>
-                    import ('../views/Home.vue'),
-            },
-            {
-                path: '/Home',
-                name: 'Home',
-                component: () =>
-                    import ('../views/Home.vue'),
-            },
-            {
-                path: '/baby',
-                name: 'baby',
-                component: () =>
-                    import ('../views/baby.vue'),
-            },
-            {
-                path: '/sport',
-                name: 'sport',
-                component: () =>
-                    import ('../views/sport.vue'),
-            }
+            path: '/',
+            name: 'Home',
+            component: () =>
+                import('../views/Home.vue'),
+        },
+        {
+            path: '/Home',
+            name: 'Home',
+            component: () =>
+                import('../views/Home.vue'),
+        },
+        {
+            path: '/baby',
+            name: 'baby',
+            component: () =>
+                import('../views/baby.vue'),
+        },
+        {
+            path: '/sport',
+            name: 'sport',
+            component: () =>
+                import('../views/sport.vue'),
+        }
         ]
     },
     {
         path: '/MyD',
         name: 'MyD',
         component: () =>
-            import ('../views/MyD.vue'),
+            import('../views/MyD.vue'),
         beforeEnter: (to, from, next) => {
             // ...
             if (from.path == '/home' && JSON.parse(sessionStorage.getItem("user")) != null) {
                 next()
             } else {
                 alert("用户未登录，请先登录");
-                setTimeout(function() {
+                setTimeout(function () {
                     next('/login')
                 }, 3000)
 
             }
         },
         children: [{
-                path: '/DD',
-                name: 'Home',
-                component: () =>
-                    import ('../components/MyD/DD.vue')
-            },
-            {
-                path: '/Dr',
-                name: 'Home',
-                component: () =>
-                    import ('../components/MyD/Dr.vue')
-            },
-            {
-                path: '/User',
-                name: 'Home',
-                component: () =>
-                    import ('../components/MyD/User.vue')
-            }
+            path: '/DD',
+            name: 'Home',
+            component: () =>
+                import('../components/MyD/DD.vue')
+        },
+        {
+            path: '/Dr',
+            name: 'Home',
+            component: () =>
+                import('../components/MyD/Dr.vue')
+        },
+        {
+            path: '/User',
+            name: 'Home',
+            component: () =>
+                import('../components/MyD/User.vue')
+        }
         ]
-    }
+    },
+    {
+        path: '/dance',
+        name: 'dance',
+        component: () => import('../views/dance.vue'),
+    },
+    {
+        path: '/rock',
+        name: 'rock',
+        component: () => import('../views/rock.vue'),
+    },
 
 ]
 

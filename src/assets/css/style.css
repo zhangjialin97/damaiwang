@@ -3,6 +3,7 @@
     width: 1407px;
     margin: 0 auto;
 }
+
 /* 首页tab页悬停 */
 .maincenter .el-tabs__item:hover {
     color: black;
@@ -16,18 +17,6 @@
 /* 首页tab页被点击 */
 .maincenter .el-tabs__active-bar {
     background-color: #ff3c1b;
-}
-
-/* 亲子页年龄段 */
-.selecd .el-tabs__item {
-    background: rgb(245, 245, 245);
-    padding: 0;
-}
-
-/* 亲子页年龄段 */
-.selecd .el-tabs__header {
-    background: rgb(245, 245, 245);
-    border: none;
 }
 
 /* 登录页右侧tabs */
@@ -49,11 +38,13 @@
 .loginRight .el-tabs__item:hover {
     color: #FF816B !important;
 }
-.el-form-item__content{
+
+.loginRight .el-form-item__content {
     margin: 0 !important;
     margin-top: 5px !important;
 
 }
+
 /* ----------------------------------------------------*/
 /* 王军军 */
 
@@ -65,6 +56,7 @@
 .selecd .el-tabs__header {
     background: rgb(245, 245, 245);
     border: none !important;
+    height: 40px;
 }
 
 .selecd .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
@@ -81,14 +73,9 @@
     outline: none !important;
 }
 
-.selecd .el-tabs__header {
-    height: 40px;
-}
-
 .selecd .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
     margin-top: 0px !important;
 }
-
 
 /* 订单确认页 */
 
@@ -212,26 +199,32 @@
 .gopay p .el-button--danger {
     background: red;
 }
+
 /* ------------------------------------------------------*/
 /* 张林照 */
-.Tabs .el-tabs--card>.el-tabs__header .el-tabs__item.is-active{
+.Tabs .el-tabs--card>.el-tabs__header .el-tabs__item.is-active {
     color: coral;
-    margin-top:0px !important ;
+    margin-top: 0px !important;
     border-top: 1px solid;
 }
-.Tabs .el-tabs__item:hover{
-color: gray;
+
+.Tabs .el-tabs__item:hover {
+    color: gray;
 }
+
 /* 个人信息页面Tab切换*/
-.Dr .el-tabs__item.is-active{
-color: #ff5c41;
-}
-.Dr .el-radio__input.is-checked .el-radio__inner{
-background: #ff5c41;
-}
-.Dr .el-radio__input.is-checked+.el-radio__label{
+.Dr .el-tabs__item.is-active {
     color: #ff5c41;
 }
-.Dr .el-radio__input.is-checked .el-radio__inner{
+
+.Dr .el-radio__input.is-checked .el-radio__inner {
+    background: #ff5c41;
+}
+
+.Dr .el-radio__input.is-checked+.el-radio__label {
+    color: #ff5c41;
+}
+
+.Dr .el-radio__input.is-checked .el-radio__inner {
     border-color: #ff5c41;
 }
