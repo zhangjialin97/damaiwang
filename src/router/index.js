@@ -4,41 +4,42 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [{
-        path: '/',
-        name: 'login',
-        component: () =>
+    path: '/',
+    name: 'login',
+    component: () =>
             import ('../views/Login.vue')
-    },
-    {
-        path: '/Register',
-        name: 'Register',
-        component: () =>
+},
+{
+    path: '/Register',
+    name: 'Register',
+    component: () =>
             import ('../views/Register.vue')
-    },
-    {
-        path: '/check',
-        name: 'check',
-        component: () =>
+},
+{
+    path: '/check',
+    name: 'check',
+    component: () =>
             import ('../views/check.vue')
-    },
-    {
-        path: '/order',
-        name: 'order',
-        component: () =>
+},
+{
+    path: '/order',
+    name: 'order',
+    component: () =>
             import ('../views/order.vue'),
-        beforeEnter: (to, from, next) => {
-            // ...
-            if (from.path == '/check') {
-                next()
-            } else {
-                next('/check')
-            }
+    beforeEnter: (to, from, next) => {
+        // ...
+        if (from.path == '/check') {
+            next()
+        } else {
+            next('/check')
         }
+    }
     },
-    {
-        path: '/pay',
+
+{
+    path: '/pay',
         name: 'pay',
-        component: () =>
+            component: () =>
             import ('../views/pay.vue'),
         beforeEnter: (to, from, next) => {
             // ...
@@ -48,11 +49,23 @@ const routes = [{
                 next('/check')
             }
         }
-    },
-    {
-        path: '/payma',
+},
+
+{
+    path: '/dance',
+        name: 'dance',
+            component: () => import('../views/dance.vue'),
+      },
+{
+    path: '/rock',
+        name: 'rock',
+            component: () => import('../views/rock.vue'),
+      },
+      
+{
+    path: '/payma',
         name: 'payma',
-        component: () =>
+            component: () =>
             import ('../views/payma.vue'),
         beforeEnter: (to, from, next) => {
             // ...
@@ -62,62 +75,62 @@ const routes = [{
                 next('/check')
             }
         }
-    },
-    {
-        path: '/Login',
+},
+{
+    path: '/Login',
         name: 'login',
-        component: () =>
+            component: () =>
             import ('../views/Login.vue')
-    },
-    {
-        path: '/manage',
+},
+{
+    path: '/manage',
         name: 'manage',
-        component: () =>
+            component: () =>
             import ('../views/manage.vue'),
         children: [{
-                path: '/',
-                name: 'Home',
-                component: () =>
+            path: '/',
+            name: 'Home',
+            component: () =>
                     import ('../views/Home.vue'),
             },
-            {
-                path: '/Home',
-                name: 'Home',
-                component: () =>
+{
+    path: '/Home',
+        name: 'Home',
+            component: () =>
                     import ('../views/Home.vue'),
             },
-            {
-                path: '/baby',
-                name: 'baby',
-                component: () =>
+{
+    path: '/baby',
+        name: 'baby',
+            component: () =>
                     import ('../views/baby.vue'),
             },
-            {
-                path: '/sport',
-                name: 'sport',
-                component: () => import('../views/sport.vue'),
+{
+    path: '/sport',
+        name: 'sport',
+            component: () => import('../views/sport.vue'),
             }
         ]
     },
-    {
+{
     path: '/MyD',
-    name: 'MyD',
-    component: () => import('../views/MyD.vue'),
-    children: [
-      {
-        path: '/DD',
-        name: 'Home',
-    component: () => import('../components/MyD/DD.vue'),
+        name: 'MyD',
+            component: () => import('../views/MyD.vue'),
+                children: [
+                    {
+                        path: '/DD',
+                        name: 'Home',
+                        component: () => import('../components/MyD/DD.vue'),
       },
-      {
-        path: '/Dr',
+{
+    path: '/Dr',
         name: 'Home',
-        component: () => import('../components/MyD/Dr.vue'),
+            component: () => import('../components/MyD/Dr.vue'),
       },
-    {
-      path: '/User',
+{
+    path: '/User',
         name: 'Home',
-        component: () => import('../components/MyD/User.vue'),
+            component: () => import('../components/MyD/User.vue'),
     }
     ]
     }
