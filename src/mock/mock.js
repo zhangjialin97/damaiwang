@@ -290,3 +290,157 @@ Mock.mock('/api/pay/dingdan', 'get', Mock.Random.dingdan());
 //     let { userName, passWord } = JSON.parse(option.body);
 //     return (userName == "admin", passWord == "123")
 // })
+//张林照
+function Like(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <6; i++) {
+        let user = {
+            id: i + 1,
+            //字段
+            name:Random.csentence(15),
+            /*价格*/
+            RMB: Random.natural(60,999),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/sport/Like','get',Like)
+//图片 Mock
+function tebleDat(){
+    let abc = [];
+    // 生成一个随机对象
+    // const Random = Mock.Random;
+    let arrImgs = [
+        require('../../public/img/base/cardimg1.jpg'),
+        require('../../public/img/base/cardimg2.jpg'),
+        require('../../public/img/base/big1.jpg'),
+        require('../../public/img/base/cardimg4.jpg'),
+        require('../../public/img/base/cardimg5.jpg'),
+        require('../../public/img/base/cardimg6.jpg'),
+    ]
+    for(let i = 0 ; i < 6   ; i++){
+        let uesr = {
+            id:i+1, //每次累加
+            imgSrc:arrImgs[i],
+        };
+        abc.push(uesr);
+    }
+    return abc;
+}
+Mock.mock('/api/sport/getDaet','get',tebleDat);
+//Tabs切换Mock数据
+
+function Tabs(){
+    let abc = [];
+    // 生成一个随机对象
+    const Random = Mock.Random;
+    let arrImgs = [
+        // require('../../public/img/base/cardimg1.jpg'),
+        // require('../../public/img/base/cardimg2.jpg'),
+        // require('../../public/img/base/big1.jpg'),
+        // require('../../public/img/base/cardimg4.jpg'),
+        // require('../../public/img/base/cardimg5.jpg'),
+        require('../../public/img/base/child1.png'),
+        require('../../public/img/base/child2.png'),
+        require('../../public/img/base/child3.png'),
+        require('../../public/img/base/child4.png'),
+        require('../../public/img/base/child5.png'),
+        require('../../public/img/base/child6.png'),
+    ]
+    for(let i = 0 ; i < 6   ; i++){
+        let uesr = {
+            id:i+1, //每次累加
+            imgSrc:arrImgs[i],
+            name:Random.cword(10),
+            city:Random.city(),
+            Time:Random.datetime()
+        };
+        abc.push(uesr);
+    }
+    return abc;
+}
+Mock.mock('/api/sport/Tabs','get',Tabs);
+function DDTT(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <4; i++) {
+        let user = {
+            id: i + 1,
+            //字段
+            name:Random.csentence(10),
+            /*价格*/
+            RMB: Random.natural(60,999),
+            TIME:Random.date('yyyy-MM-dd'),
+            DD:Random.natural(6),
+            DJ:Random.natural(1,20),
+            DL:Random.natural(200,300),
+            Gy:"微信支付"
+        };
+        data.push(user);
+    }
+    return data;
+}
+function tableDate5(){
+    let data = [];
+    for (let i = 0; i <6; i++) {
+        let user = {
+            url:[
+                "img/base/cardimg1.jpg",
+                "img/base/cardimg2.jpg",
+                "img/base/cardimg3.jpg",
+                "img/base/cardimg4.jpg",
+                "img/base/cardimg5.jpg",
+                "img/base/cardimg6.jpg",
+            ],
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/HOTL','get',tableDate5)
+
+function tableDate6(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <1; i++) {
+        let user = {
+            id: i + 1,
+            //省
+            add:Random.province(),
+            //5字
+            addd:Random.csentence(5),
+            //8字
+            ad:Random.csentence(8),
+            //时间
+            sj:Random.date('yyyy-MM-dd'),
+            //市
+            shi:Random.county(true),
+            //数字
+            RMB: Random.natural(0, 50),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/HOTX','get',tableDate6)
+
+Mock.mock('/api/MyD/DD','get',DDTT)
+// 增删改查数据
+function TBS(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <4; i++) {
+        let user = {
+            id: i + 1,
+            //字段
+            date:Random.date('yyyy-MM-dd'),
+            name:Random.cname(),
+            address:Random.county()
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/sport/User','get',TBS)

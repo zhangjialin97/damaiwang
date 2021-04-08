@@ -92,7 +92,34 @@ const routes = [{
                 component: () =>
                     import ('../views/baby.vue'),
             },
+            {
+                path: '/sport',
+                name: 'sport',
+                component: () => import('../views/sport.vue'),
+            }
         ]
+    },
+    {
+    path: '/MyD',
+    name: 'MyD',
+    component: () => import('../views/MyD.vue'),
+    children: [
+      {
+        path: '/DD',
+        name: 'Home',
+    component: () => import('../components/MyD/DD.vue'),
+      },
+      {
+        path: '/Dr',
+        name: 'Home',
+        component: () => import('../components/MyD/Dr.vue'),
+      },
+    {
+      path: '/User',
+        name: 'Home',
+        component: () => import('../components/MyD/User.vue'),
+    }
+    ]
     }
 
 ]

@@ -27,8 +27,8 @@
                 <span slot="normalImg">戏剧</span>
               </items>
             </el-menu-item>
-            <el-menu-item index="3">
-              <items mark="3" :sel="selected" @change="getVal">
+            <el-menu-item index="sport">
+              <items mark="sport" :sel="selected" @change="getVal">
                 <span slot="activeImg">体育</span>
                 <span slot="normalImg">体育</span>
               </items>
