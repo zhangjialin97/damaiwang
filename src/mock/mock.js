@@ -621,4 +621,339 @@ function tableDatq() {
 }
 Mock.mock('/api/gotData', 'get', tableDatq);
 
+//李曙杰
+//猜你喜欢的mock接口
+var Mock = require('mockjs')
+function tableDate(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <6; i++) {
+        let user = {
+            id: i + 1,
+            name:Random.csentence(15),
+            RMB: Random.natural(60, 1000),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData','get',tableDate)
+
+function tableDate1(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <3; i++) {
+        let user = {
+            url:[
+                "img/qinzi/img_16.png",
+                "img/qinzi/img_17.png",
+                "img/qinzi/img_18.png",
+            ],
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData1','get',tableDate1)
+
+function tableDate2(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <6; i++) {
+        let user = {
+            id: i + 1,
+            name:Random.csentence(15),
+            RMB: Random.natural(60, 1000),
+            url:[
+                "img/base/child2.png",
+                "img/base/child3.png",
+                "img/base/child4.png",
+                "img/base/child2.png",
+                "img/base/child3.png",
+                "img/base/child4.png",
+            ],
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData2','get',tableDate2)
+
+function tableDate5(){
+    let data = [];
+    for (let i = 0; i <6; i++) {
+        let user = {
+            url:[
+                "img/base/cardimg1.jpg",
+                "img/base/cardimg1.jpg",
+                "img/base/cardimg1.jpg",
+                "img/base/cardimg1.jpg",
+                "img/base/cardimg1.jpg",
+                "img/base/cardimg1.jpg",
+            ],
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData5','get',tableDate5)
+
+function tableDate6(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <1; i++) {
+        let user = {
+            id: i + 1,
+            //省
+            add:Random.province(),
+            //5字
+            addd:Random.csentence(5),
+            //8字
+            ad:Random.csentence(8),
+            //时间
+            sj:Random.date('yyyy-MM-dd'),
+            //市
+            shi:Random.county(true),
+            //数字
+            RMB: Random.natural(0, 10),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData6','get',tableDate6)
+
+function tableDate7(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <1; i++) {
+        let user = {
+            id: i + 1,
+            //省
+            add:Random.province(),
+            //5字
+            addd:Random.csentence(5),
+            //8字
+            ad:Random.csentence(8),
+            //时间
+            sj:Random.date('yyyy-MM-dd'),
+            //市
+            shi:Random.county(true),
+            //数字
+            RMB: Random.natural(0, 10),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData7','get',tableDate7)
+
+function tableDate8(){
+    let data = [];
+    for (let i = 0; i <6; i++) {
+        let user = {
+            url:[
+                "img/base/calendar01.png",
+                "img/base/calendar03.png",
+                "img/base/calendar01.png",
+                "img/base/calendar04.png",
+                "img/base/calendar05.png",
+                "img/base/calendar06.png",
+            ],
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData8','get',tableDate8)
+
+function tableDate9(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <1; i++) {
+        let user = {
+            id: i + 1,
+            //省
+            add:Random.province(),
+            //5字
+            addd:Random.csentence(5),
+            //8字
+            ad:Random.csentence(8),
+            //时间
+            sj:Random.date('yyyy-MM-dd'),
+            //市
+            shi:Random.county(true),
+            //数字
+            RMB: Random.natural(0, 10),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData9','get',tableDate9)
+
+//列表页的数据
+//热门推荐图片数据
+function tableDate11(){
+    let data = [];
+    for (let i = 0; i <6; i++) {
+        let user = {
+            url:[
+                "img/base/big1.jpg",
+                "img/base/big2.jpg",
+                "img/base/big1.jpg",
+                "img/base/big4.jpg",
+                "img/base/big5.jpg",
+                "img/base/big5.jpg",
+            ],
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData11','get',tableDate11)
+
+//热门推荐文字数据
+function tableDate12(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <1; i++) {
+        let user = {
+            id: i + 1,
+            //省
+            add:Random.province(),
+            //5字
+            addd:Random.csentence(5),
+            //8字
+            ad:Random.csentence(8),
+            //时间
+            sj:Random.date('yyyy-MM-dd'),
+            //市
+            shi:Random.county(true),
+            //数字
+            RMB: Random.natural(0, 10),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData12','get',tableDate12)
+
+//最近开场图片数据
+function tableDate13(){
+    let data = [];
+    for (let i = 0; i <6; i++) {
+        let user = {
+            url:[
+                "img/base/calendar04.png",
+                "img//base/calendar05.png",
+                "img//base/calendar06.png",
+                "img/base/calendar07.png",
+                "img/base/calendar08.png",
+                "img/base/calendar09.png",
+            ],
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData13','get',tableDate13)
+
+//最近开场文字数据
+function tableDate14(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <1; i++) {
+        let user = {
+            id: i + 1,
+            //省
+            add:Random.province(),
+            //5字
+            addd:Random.csentence(5),
+            //8字
+            ad:Random.csentence(8),
+            //时间
+            sj:Random.date('yyyy-MM-dd'),
+            //市
+            shi:Random.county(true),
+            //数字
+            RMB: Random.natural(0, 10),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData14','get',tableDate14)
+
+//最新上架图片数据
+
+function tableDate15(){
+    let data = [];
+    for (let i = 0; i <6; i++) {
+        let user = {
+            url:[
+                "img/base/child1.png",
+                "img//base/child2.png",
+                "img//base/child3.png",
+                "img/base/child4.png",
+                "img/base/child5.png",
+                "img/base/child6.png",
+            ],
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData15','get',tableDate15)
+
+//最新上架文字数据
+
+function tableDate16(){
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i <1; i++) {
+        let user = {
+            id: i + 1,
+            //省
+            add:Random.province(),
+            //5字
+            addd:Random.csentence(5),
+            //8字
+            ad:Random.csentence(8),
+            //时间
+            sj:Random.date('yyyy-MM-dd'),
+            //市
+            shi:Random.county(true),
+            //数字
+            RMB: Random.natural(0, 10),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData16','get',tableDate16)
+
+
+
+//评论数据
+function write(){
+    let data = [];
+    const Random = Mock.Random;
+    var ll =["/img/base/hz1.png","/img/base/hz2.png","/img/base/hz3.png","/img/base/hz4.png"]
+    for (var i = 0; i <6; i++) {
+        var num = Math.floor(Math.random()*5)
+        let user = {
+            date:Random.date("yyyy-MM-dd"),
+            name:Mock.mock("@cword(14, 20)"),
+            imgurl:ll[num],
+            time:Random.now(),
+            txt:Random.float(0,4,1,1),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getwrite','get',write)
+
+
 
