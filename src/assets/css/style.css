@@ -45,6 +45,11 @@
 
 }
 
+.register .el-form-item__content {
+    margin: 0 !important;
+    margin-top: 5px !important;
+}
+
 /* ----------------------------------------------------*/
 /* 王军军 */
 
