@@ -56,14 +56,16 @@
             <div>
             <CalendarSwitchVue></CalendarSwitchVue>
             </div>
-            <div class="dibu">
+            <div>
               <bottom></bottom>
             </div>
           </div>
         </el-col>
         <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
       </el-row>
-       <setBottomVue></setBottomVue>
+       <div class="dubu">
+         <setBottomVue></setBottomVue>
+       </div>
     </div>
   </div>
 </template>
@@ -136,4 +138,9 @@ export default {
   border-radius: 4px;
   min-height: 36px;
 }
+.dubu{
+  margin-top:30px ;
+  /* border: 1px red solid; */
+}
+
 </style>

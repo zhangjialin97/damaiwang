@@ -44,11 +44,15 @@
       </el-col>
       <el-col :span="3"><div class="grid-content bg-purple"></div></el-col>
     </el-row>
+    <div class="dubu">
+         <setBottomVue></setBottomVue>
+       </div>
   </div>
 </template>
 <script>
 import header_navVue from '../components/header_nav.vue';
-
+//引入底部
+import setBottomVue from '../components/setBottom.vue';
 export default {
   methods: {
     handleOpen(key, keyPath) {
@@ -59,6 +63,7 @@ export default {
     },
   },
   components:{
+    setBottomVue,
     header_navVue
   }
 };
