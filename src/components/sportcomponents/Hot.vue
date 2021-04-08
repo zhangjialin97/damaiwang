@@ -1,24 +1,25 @@
 <template>
   <div>
-    <div id="muen">
-      <h4 class="pair">热门聚集</h4>
-      <img src="../../../public/img/base/ribbon-totem.png" class="zxc" />
-      <img src="../../../public/img/base/cardimg3.jpg" class="opr" />
-      <div class="index">
+    <div id="muenl">
+      <h4 class="pairl">热门聚集</h4>
+      <img src="../../../public/img/base/ribbon-totem.png" class="zxcl" />
+      <img src="../../../public/img/base/cardimg3.jpg" class="oprl" />
+      <div class="indexl">
         <ul>
-          <li v-for="(item, index) in tableDate5" :key="index" class="kkk">
-            <div class="title5">
-              <img :src="item.url[index]" class="chang" />
-              <div class="mock6">
-                <p
-                  class="title6"
-                  v-for="(item, index) in tableDate6"
-                  :key="index">
-                  <span class="RMD6">
-                    <p><span>{{ item.addd }}</span></p>
-                    <p><span>{{ item.sj}}</span></p>
+          <li v-for="(item, index) in HOTL" :key="index" class="kkkl">
+            <div class="title5l">
+              <img :src="item.url[index]" class="changl" />
+              <div class="mock6l">
+                <p class="title6l" v-for="(item, index) in HOTX" :key="index">
+                  <span class="RMD6l">
+                    <p>
+                      <span>{{ item.addd }}</span>
+                    </p>
+                    <p>
+                      <span>{{ item.sj }}</span>
+                    </p>
                     <p>{{ item.shi }}</p>
-                    <span class="RMB6">{{item.RMB}}元售票中</span>
+                    <span class="RMB6l">{{ item.RMB }}元售票中</span>
                   </span>
                 </p>
               </div>
@@ -34,55 +35,55 @@
 export default {
   data() {
     return {
-      tableDate5: [],
-      tableDate6: [],
+      HOTL: [],
+      HOTX: [],
     };
   },
   mounted() {
     this.$http.get("/api/HOTL").then((res) => {
       // console.log(res.data);
       var datas = res.data;
-      this.tableDate5 = datas;
+      this.HOTL = datas;
     });
     this.$http.get("/api/HOTX").then((res) => {
       // console.log(res.data);
       var datas = res.data;
-      this.tableDate6 = datas;
+      this.HOTX = datas;
     });
   },
 };
 </script>
 
 <style>
-#muen {
+#muenl {
   height: 500px;
 }
-.pair {
+.pairl {
   text-align: center;
 }
-.zxc {
+.zxcl {
   margin-left: 143px;
 }
-.opr {
+.oprl {
   width: 18%;
   height: 400px;
   float: left;
   margin-top: 57px;
 }
-.chang {
+.changl {
   width: 160px;
   height: 183px;
   float: left;
 }
-.kkk {
+.kkkl {
   width: 380px;
 
   display: inline-block;
 }
-.mock6 {
+.mock6l {
   font-size: 10px;
 }
-.title6 {
+.title6l {
   width: 200px;
   float: left;
 }

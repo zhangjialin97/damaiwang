@@ -382,7 +382,7 @@ function DDTT(){
     }
     return data;
 }
-function tableDate5(){
+function HOTL(){
     let data = [];
     for (let i = 0; i <6; i++) {
         let user = {
@@ -399,7 +399,7 @@ function tableDate5(){
     }
     return data;
 }
-Mock.mock('/api/HOTL','get',tableDate5)
+Mock.mock('/api/HOTL','get',HOTL)
 
 function tableDate6(){
     let data = [];
