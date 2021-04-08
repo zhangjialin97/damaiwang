@@ -213,3 +213,25 @@
     background: red;
 }
 /* ------------------------------------------------------*/
+/* 张林照 */
+.Tabs .el-tabs--card>.el-tabs__header .el-tabs__item.is-active{
+    color: coral;
+    margin-top:0px !important ;
+    border-top: 1px solid;
+}
+.Tabs .el-tabs__item:hover{
+color: gray;
+}
+/* 个人信息页面Tab切换*/
+.Dr .el-tabs__item.is-active{
+color: #ff5c41;
+}
+.Dr .el-radio__input.is-checked .el-radio__inner{
+background: #ff5c41;
+}
+.Dr .el-radio__input.is-checked+.el-radio__label{
+    color: #ff5c41;
+}
+.Dr .el-radio__input.is-checked .el-radio__inner{
+    border-color: #ff5c41;
+}
