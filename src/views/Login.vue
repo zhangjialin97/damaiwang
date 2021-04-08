@@ -236,6 +236,7 @@ export default {
                 } else {
                   this.loading = false;
                   this.$message("密码不正确");
+                  this.ruleForm.pass = "";
                   return;
                 }
               }
