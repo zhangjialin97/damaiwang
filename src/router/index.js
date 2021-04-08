@@ -82,6 +82,16 @@ const routes = [
                 import('../views/Home.vue'),
         },
         {
+            path: '/dance',
+            name: 'dance',
+            component: () => import('../views/dance.vue'),
+        },
+        {
+            path: '/rock',
+            name: 'rock',
+            component: () => import('../views/rock.vue'),
+        },
+        {
             path: '/Home',
             name: 'Home',
             component: () =>
@@ -143,16 +153,7 @@ const routes = [
         }
         ]
     },
-    {
-        path: '/dance',
-        name: 'dance',
-        component: () => import('../views/dance.vue'),
-    },
-    {
-        path: '/rock',
-        name: 'rock',
-        component: () => import('../views/rock.vue'),
-    },
+   
     
     {
         path: '/Liebiao',
