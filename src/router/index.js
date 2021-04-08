@@ -108,13 +108,13 @@ const routes = [
             import('../views/MyD.vue'),
         beforeEnter: (to, from, next) => {
             // ...
-            if (from.path == '/home' && JSON.parse(sessionStorage.getItem("user")) != null) {
+            if (JSON.parse(sessionStorage.getItem("user")) != null) {
                 next()
             } else {
-                alert("用户未登录，请先登录");
+                Vue.prototype.$message("用户未登录，请先登录")
                 setTimeout(function () {
                     next('/login')
-                }, 3000)
+                }, 1000)
 
             }
         },
