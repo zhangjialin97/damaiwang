@@ -100,7 +100,7 @@ export default {};
 }
 .box {
   height: 500px;
-  width: 100%;
+  width: 1903px;
   background: #e6e6e6;
 }
 .biankuang {
