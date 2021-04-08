@@ -444,3 +444,181 @@ function TBS(){
     return data;
 }
 Mock.mock('/api/sport/User','get',TBS)
+
+var Mock = require('mockjs')
+
+// 今日推荐
+Mock.mock('/api/home/todayitems', 'get', todayitems);
+function todayitems() {
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i < 6; i++) {
+        let user = {
+            title: Random.cword(8, 10),
+            price: Random.integer(100, 500),
+            xiabiao: Random.integer(0, 5)
+        };
+        data.push(user);
+    }
+    return data;
+}
+
+// 登录
+Mock.mock('/api/login', 'post', (option) => {
+    let { userName, passWord } = JSON.parse(option.body);
+    return (userName == "admin", passWord == "123")
+})
+
+// 戏剧达人
+Mock.mock('/api/home/xijudaren', 'get', xijudaren);
+function xijudaren() {
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i < 4; i++) {
+        let user = {
+            title: Random.cword(8, 10),
+            datefrom: Mock.mock('@date("yyyy-MM-dd")'),
+            dateto: Mock.mock('@date("yyyy-MM-dd")'),
+            address: Mock.mock("@county(true)"),
+            price: Random.integer(100, 500),
+
+        };
+        data.push(user);
+    }
+    return data;
+}
+
+// 王军军
+// 猜你喜欢
+Mock.Random.extend({
+    phone: function () {
+        var phonePrefixs = ['1', '2', '3'] // 自己写前缀哈
+        return this.pick(phonePrefixs) + Mock.mock(/\d{2}/) //Number()
+    }
+})
+
+function babyCai() {
+    let data = [];
+    const Random = Mock.Random;
+    for (let i = 0; i < 6; i++) {
+        let user = {
+            title: Random.ctitle(),
+            money: Mock.Random.phone(),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/babyCai', 'get', babyCai);
+
+// 耿照凤 
+// 猜你喜欢
+function tableDate() {
+    let data = [];
+    const Random = Mock.Random;
+    let arrImg = [
+        require('../../public/img/base/cardimg1.jpg'),
+        require('../../public/img/base/cardimg2.jpg'),
+        require('../../public/img/base/cardimg3.jpg'),
+        require('../../public/img/base/cardimg4.jpg'),
+        require('../../public/img/base/cardimg5.jpg'),
+        require('../../public/img/base/cardimg5.jpg'),
+        require('../../public/img/base/cardimg6.jpg'),
+    ]
+    for (let i = 0; i < 6; i++) {
+        let user = {
+            id: i + 1,
+            imgSrc: arrImg[i],
+            name: '小柯音乐剧 我变了我...',
+            price: Mock.mock('@integer(100,500)'),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData', 'get', tableDate);
+
+
+// 耿照凤 
+// 猜你喜欢
+function tableDate() {
+    let data = [];
+    const Random = Mock.Random;
+    let arrImg = [
+        require('../../public/img/base/cardimg1.jpg'),
+        require('../../public/img/base/cardimg2.jpg'),
+        require('../../public/img/base/cardimg3.jpg'),
+        require('../../public/img/base/cardimg4.jpg'),
+        require('../../public/img/base/cardimg5.jpg'),
+        require('../../public/img/base/cardimg5.jpg'),
+        require('../../public/img/base/cardimg6.jpg'),
+    ]
+    for (let i = 0; i < 6; i++) {
+        let user = {
+            id: i + 1,
+            imgSrc: arrImg[i],
+            name: '小柯音乐剧 我变了我...',
+            price: Mock.mock('@integer(100,500)'),
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getData', 'get', tableDate);
+
+// 耿照凤
+// 音乐专区  舞蹈专区
+function tableDates() {
+    let data = [];
+    const Random = Mock.Random;
+    let arrImgS = [
+        require('../../public/img/base/child1.png'),
+        require('../../public/img/base/child2.png'),
+        require('../../public/img/base/child3.png'),
+        require('../../public/img/base/child4.png'),
+        require('../../public/img/base/child5.png'),
+        require('../../public/img/base/child6.png'),
+    ]
+    for (let i = 0; i < 6; i++) {
+        let user = {
+            id: i + 1,
+            tupian: arrImgS[i],
+            name: '小柯音乐剧未来三部曲之《我变了.我没变》',
+            price: Mock.mock('@integer(0,200)'),
+            wenzi :'深圳市少年宫剧场',
+            date:'2002.11.2-2021.3.30',
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/getDataS', 'get', tableDates);
+
+//热门排行
+function tableDatq() {
+    let data = [];
+    const Random = Mock.Random;
+    let arrImgS = [
+        require('../../public/img/base/cardimg6.jpg'),
+        require('../../public/img/base/cardimg4.jpg'),
+        require('../../public/img/base/cardimg2.jpg'),
+        require('../../public/img/base/cardimg1.jpg'),
+        require('../../public/img/base/cardimg2.jpg'),
+        require('../../public/img/base/cardimg1.jpg'),
+    ]
+    for (let i = 0; i < 6; i++) {
+        let user = {
+            id: i + 1,
+            tupian: arrImgS[i],
+            date:'2002.11.2-2021.3.30',
+            name: '小柯音乐剧未来三部曲之《我变了.我没变》',
+            price: Mock.mock('@integer(100,200)'),
+            wenzi :'深圳市少年宫剧场'
+        };
+        data.push(user);
+    }
+    return data;
+}
+Mock.mock('/api/gotData', 'get', tableDatq);
+
+
