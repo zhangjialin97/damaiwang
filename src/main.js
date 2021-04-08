@@ -19,6 +19,7 @@ import mock from './mock/mock.js'
 
 Vue.config.productionTip = false
 
+// 配置标题
 Vue.directive('title', {
   inserted: function (el) {
     document.title = el.dataset.title
