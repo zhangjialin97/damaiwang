@@ -98,7 +98,17 @@ const routes = [
             name: 'sport',
             component: () =>
                 import('../views/sport.vue'),
-        }
+        },
+        {
+            path: '/dance',
+            name: 'dance',
+            component: () => import('../views/dance.vue'),
+        },
+        {
+            path: '/rock',
+            name: 'rock',
+            component: () => import('../views/rock.vue'),
+        },
         ]
     },
     {
@@ -137,18 +147,7 @@ const routes = [
                 import('../components/MyD/User.vue')
         }
         ]
-    },
-    {
-        path: '/dance',
-        name: 'dance',
-        component: () => import('../views/dance.vue'),
-    },
-    {
-        path: '/rock',
-        name: 'rock',
-        component: () => import('../views/rock.vue'),
-    },
-
+    }
 ]
 
 const router = new VueRouter({

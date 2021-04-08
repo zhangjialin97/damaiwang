@@ -21,8 +21,8 @@
               </items>
             </el-menu-item>
 
-            <el-menu-item index="2">
-              <items mark="2" :sel="selected" @change="getVal">
+            <el-menu-item index="xiju">
+              <items mark="xiju" :sel="selected" @change="getVal">
                 <span slot="activeImg">戏剧</span>
                 <span slot="normalImg">戏剧</span>
               </items>
@@ -39,14 +39,14 @@
                 <span slot="normalImg">亲子</span>
               </items>
             </el-menu-item>
-            <el-menu-item index="5">
-              <items mark="5" :sel="selected" @change="getVal">
+            <el-menu-item index="dance">
+              <items mark="dance" :sel="selected" @change="getVal">
                 <span slot="activeImg">舞蹈古典</span>
                 <span slot="normalImg">舞蹈古典</span>
               </items>
             </el-menu-item>
-            <el-menu-item index="6">
-              <items mark="6" :sel="selected" @change="getVal">
+            <el-menu-item index="rock">
+              <items mark="rock" :sel="selected" @change="getVal">
                 <span slot="activeImg">摇滚</span>
                 <span slot="normalImg">摇滚</span>
               </items>
