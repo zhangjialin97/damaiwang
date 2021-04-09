@@ -2,7 +2,7 @@
   <div class="seach">
     <ul class="drop">
       <li>
-        <img src="/img/logo.png" alt="" />
+        <router-link to="/home"><img src="/img/logo.png" alt="" /></router-link>
       </li>
       <li class="address">
         <el-dropdown :hide-on-click="false">

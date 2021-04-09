@@ -273,7 +273,12 @@ export default {
     //结账跳转-----------------------------------------------------------------------------------------------
     push(){
       //此路由传值方法可隐藏传输得值
-      this.$router.push({name:'order',params:{info:this.seat1}});
+      if(JSON.parse(sessionStorage.getItem("user")) != null){
+        this.$router.push({name:'order',params:{info:this.seat1}});
+      }else{
+        this.$message('请先登录')
+      }
+      
     },
     bindScroll() {
       //  添加鼠标点下和移动事件，通过这两个事件进行监听，通过修改position的top和left值进行界面的移动。
