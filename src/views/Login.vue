@@ -64,7 +64,32 @@
               >
             </p>
             <p class="bianju">
-              其他登录：<img src="img/base/weixin.png" alt="" class="weixin" />
+              其他登录：<img
+                src="img/base/weixin.png"
+                alt=""
+                class="weixin"
+                @click="dialogVisible = true"
+              />
+
+              <el-dialog
+                title=""
+                :visible.sync="dialogVisible"
+                width="30%"
+                :before-close="handleClose"
+                top="28vh"
+              >
+                <div class="erweima">
+                  <vue-qr
+                    :text="downloadData.url"
+                    :margin="0"
+                    colorDark="#f67b29"
+                    colorLight="#fff"
+                    :logoSrc="downloadData.icon + '?cache'"
+                    :logoScale="0.3"
+                    :size="200"
+                  ></vue-qr>
+                </div>
+              </el-dialog>
             </p>
           </el-tab-pane>
           <el-tab-pane label="短信快捷登录" name="second">
@@ -130,11 +155,13 @@
 <script>
 import topTitle from "../components/topTitle";
 import bottomTitle from "../components/bottomTitle";
+import vueQr from "vue-qr";
 
 export default {
   components: {
     topTitle,
     bottomTitle,
+    vueQr,
   },
   // 监听
   watch: {
@@ -200,6 +227,11 @@ export default {
         userphone: [{ validator: validatephone, trigger: "blur" }],
       },
       loading: false,
+      downloadData: {
+        url: "http://www.grysw.com",
+        icon: "/img/base/saoma.jpg",
+      },
+      dialogVisible: false,
     };
   },
   methods: {
@@ -280,6 +312,13 @@ export default {
         this.disabled = false;
       }
     },
+    handleClose(done) {
+      this.$confirm("确认关闭？")
+        .then((_) => {
+          done();
+        })
+        .catch((_) => {});
+    },
   },
 };
 </script>
@@ -322,5 +361,10 @@ export default {
 .checknum2 {
   width: 180px;
   margin-right: 50px;
+}
+.erweima {
+  width: 200px;
+  margin: 10px auto;
+  height: 25vh;
 }
 </style>
