@@ -20,17 +20,19 @@
       <div class="rmain fl">
         <ul>
           <li v-for="(item, index) in darenitem" :key="index" class="fl lis">
-            <img :src="suijiImg[ranNum[index]]" alt="" class="rimg fl" />
-            <p class="firstp">
-              {{ item.title | formatTitle1("。", "...") }}
-            </p>
-            <p>{{ item.datefrom }}-{{ item.dateto }}</p>
-            <p>
-              {{ item.address }}
-            </p>
-            <p>
-              {{ item.price | formatPrice("￥", "起") }}
-            </p>
+            <a href="/Xiangqin">
+              <img :src="suijiImg[ranNum[index]]" alt="" class="rimg fl" />
+              <p class="firstp">
+                {{ item.title | formatTitle1("。", "...") }}
+              </p>
+              <p>{{ item.datefrom }}-{{ item.dateto }}</p>
+              <p>
+                {{ item.address }}
+              </p>
+              <p>
+                {{ item.price | formatPrice("￥", "起") }}
+              </p>
+            </a>
           </li>
         </ul>
       </div>
