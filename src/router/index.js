@@ -5,6 +5,12 @@ Vue.use(VueRouter)
 
 const routes = [
     {
+        path: '/baiduMap',
+        name: 'baiduMap',
+        component: () =>
+            import('../views/baiduMap.vue')
+    },
+    {
         path: '/',
         name: 'login',
         component: () =>
